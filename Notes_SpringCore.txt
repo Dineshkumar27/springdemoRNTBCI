@@ -1,0 +1,77 @@
+1. Go to application.properties 
+   server.port=9911
+2. create a Controller class inside the com.example.springcoredemo
+   create controller package,
+  right click the com.example.springcoredemo-> new-> javaclass->   controller.HomeController.java
+
+Homecontroller.java
+
+@RestController
+public class HomeController {
+
+    @GetMapping("/")
+    public String hello(){
+        return "Welcome to Spring!";
+    }
+}
+
+
+Spring  
+
+
+@Component-> creating a object  inside Spring Object Factory
+This is called Inversion of Control
+
+Dependency Injection
+@Autowire
+
+
+Steps
+
+
+1. Controller annotated with @RestController with class name HomeController
+
+ @GetMapping("/)
+public String display(){
+  return "Hello"
+}
+
+
+Start application  > localhost:9911/
+
+2. Create a Player Inteface 
+
+    public String getPractice();
+    
+3. Created Component CrickerPlayer annotated with @Component
+
+     Created Constructor
+
+public String getPractice(){}
+
+4.   Created Component FootballPlayer annotated with @Component
+
+     Created Constructor
+
+public String getPractice(){}
+
+5. Created Dependency Injection in HomeController constructor/setter 
+
+6. @Qualifier("beanname") given in HomeController constructor
+  annotate the constructor with @Autowired
+
+7. @Primary to can be given to many component
+   @Qualified can be given for one component
+8. @Lazy-> by default all object will be created, to create the object only when required
+   then we use @Lazy, in spring by default lazy is false.
+   it is difficult to give @Lazy for more classes, so we can give the property 
+   spring.main.lazy-inizialization=true
+  
+
+9.By default Spring will Scan the component inside the package where the main method is available,
+  to scan the packages outside the main package we need to use
+@SpringBootApplication(scanPackages={"mypkg.CricketPlayer","mypkg.FootballPlayer"})
+    
+
+   
+     
