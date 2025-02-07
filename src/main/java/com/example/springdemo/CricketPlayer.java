@@ -2,10 +2,12 @@ package com.example.springdemo;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 
 @Component
+@Scope("prototype") //by default it is singleton
  public class CricketPlayer implements Player{
 
     public CricketPlayer() {
