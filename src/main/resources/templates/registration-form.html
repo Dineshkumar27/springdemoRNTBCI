@@ -5,10 +5,20 @@
     <title>Registration Form</title>
 </head>
 <body>
-<form th:action="@{/processForm3}">
-    <input type="text" name="username"
-           placeholder="Enter your name"/>
+<form th:action="@{/processForm4}" th:object="${customer}" method="POST">
+    FirstName: <input type="text"
+           th:field="*{firstname}"/> <br>
+    LastName: <input type="text"
+           th:field="*{lastname}"/> <br>
+    Country:
+    <select th:field="*{country}">
+      <option th:each="tempCountry: ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"/>
+    </select>
     <input type="submit" value="submit"/>
+
+    <br><br>
+
+
 
 </form>
 </body>

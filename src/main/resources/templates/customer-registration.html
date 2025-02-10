@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .error{color:red;}
+    </style>
+    <title>Registration Form</title>
+</head>
+<body>
+<form th:action="@{/processCustomerForm}"  th:object="${customer2}"
+      method="GET">
+    FirstName: <input type="text" th:field="*{firstname}"/> <br>
+    LastName:(*) <input type="text" th:field="*{lastname}"/>
+    <!--    Add the error-->
+    <span
+          th:if="${#fields.hasErrors('lastname')}"
+          th:errors="*{lastname}"
+          class="error"></span> <br>
+
+<!--    Country: <select th:field="*{country}">-->
+<!--    <option th:each="tempCountry:${countries}" th:value="${tempCountry}" th:text="${tempCountry}"/>-->
+<!--     </select>-->
+
+<!--    <br>-->
+<!--    Favorite OS:-->
+<!--    <input type="checkbox" th:field="*{favOS}" th:each="myLang:${favoriteOS}"-->
+<!--           th:value="${myLang}" th:text="${myLang}"/>-->
+
+
+
+
+    <input type="submit" value="submit"/>
+
+    <br><br>
+
+
+
+</form>
+</body>
+</html>
