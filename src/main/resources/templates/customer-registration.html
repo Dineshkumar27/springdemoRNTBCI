@@ -17,25 +17,30 @@
           th:if="${#fields.hasErrors('lastname')}"
           th:errors="*{lastname}"
           class="error"></span> <br>
+    Number Of Points:(*) <input type="text" th:field="*{numberOfPoints}"/>
 
-<!--    Country: <select th:field="*{country}">-->
-<!--    <option th:each="tempCountry:${countries}" th:value="${tempCountry}" th:text="${tempCountry}"/>-->
-<!--     </select>-->
+    <span
+            th:if="${#fields.hasErrors('numberOfPoints')}"
+            th:errors="*{numberOfPoints}"
+            class="error"></span> <br>
 
-<!--    <br>-->
-<!--    Favorite OS:-->
-<!--    <input type="checkbox" th:field="*{favOS}" th:each="myLang:${favoriteOS}"-->
-<!--           th:value="${myLang}" th:text="${myLang}"/>-->
+    Zipcode:(*) <input type="text" th:field="*{zipCode}"/>
 
+    <span
+            th:if="${#fields.hasErrors('zipCode')}"
+            th:errors="*{zipCode}"
+            class="error"></span> <br>
 
+    Employee Code:(*) <input type="text" th:field="*{empCode}"/>
 
-
-    <input type="submit" value="submit"/>
+    <span
+            th:if="${#fields.hasErrors('empCode')}"
+            th:errors="*{empCode}"
+            class="error"></span> <br>
 
     <br><br>
 
-
-
+    <input type="submit" value="submit"/>
 </form>
 </body>
 </html>

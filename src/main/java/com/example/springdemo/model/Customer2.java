@@ -1,8 +1,7 @@
 package com.example.springdemo.model;
 
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import com.example.springdemo.validation.EmployeeCode;
+import jakarta.validation.constraints.*;
 
 import java.util.List;
 
@@ -12,25 +11,38 @@ public class Customer2 {
     @NotNull(message = "is required")
     @Size(min=1,message="is required")
     private String lastname;
-    private String country;
-    private List<String> favOS;
+    @NotNull(message = "is required")
+    @Min(value=0,message="number of points must be above 0")
+    @Max(value=100,message="number of points must be below 100")
+    private Integer numberOfPoints;
+    @Pattern(regexp = "[0-9]{6}",message = "Zip code must be six digits")
+    private String zipCode;
+    @EmployeeCode
+    private String empCode;
 
-    public List<String> getFavOS() {
-        return favOS;
+    public String getEmpCode() {
+        return empCode;
     }
 
-    public void setFavOS(List<String> favOS) {
-        this.favOS = favOS;
+    public void setEmpCode(String empCode) {
+        this.empCode = empCode;
     }
 
-    public String getCountry() {
-        return country;
+
+
+    public String getZipCode(){
+        return this.zipCode;
+    }
+    public void setZipCode(String zipCode){
+        this.zipCode=zipCode;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public Integer getNumberOfPoints(){
+        return this.numberOfPoints;
     }
-
+    public void setNumberOfPoints(Integer numberOfPoints){
+        this.numberOfPoints=numberOfPoints;
+    }
 
 
     public String getLastname() {

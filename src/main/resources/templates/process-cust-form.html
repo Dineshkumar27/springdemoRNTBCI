@@ -8,12 +8,16 @@
 <p th:text="'User register: '+${customer2.firstname}+
 ' '+${customer2.lastname}"/>
 
+Number of Points: <span th:text="${customer2.numberOfPoints}"/>
+Zipcode: <span th:text="${customer2.zipCode}"/>
+Empcode: <span th:text="${customer2.empCode}"/>
+
 <!--<p th:text="'Country is: '+${customer2.country}"/>-->
 <!--<p th:text="'My Favorite OS: '+${customer2.favOs}"/>-->
 <!--<li  th:each="os:${objectname.propertyName}" th:text="${os}"/>-->
-<ul>
-    <li  th:each="os:${customer2.favOS}" th:text="${os}"/>
-</ul>
+<!--<ul>-->
+<!--    <li  th:each="os:${customer2.favOS}" th:text="${os}"/>-->
+<!--</ul>-->
 
 </body>
 </html>
